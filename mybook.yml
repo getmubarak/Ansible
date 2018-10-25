@@ -1,4 +1,4 @@
-- hosts: mywebservers
+- hosts: Ansible_server
   gather_facts: False
 
   vars:
