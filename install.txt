@@ -37,3 +37,6 @@ $ ansible all -m ping -e 'ansible_python_interpreter=/usr/bin/python3'
 “all” means all hosts
 “-m” stands for module
 “ping” is one of the module of ansible
+
+ansible-playbook -i hosts -s -u ubuntu my_playbook_2.yaml -e 'ansible_python_interpreter=/usr/bin/python3'
+
