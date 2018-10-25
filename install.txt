@@ -1,0 +1,39 @@
+//Ansible is not available in the Ubuntu default repository, we will add the Anisble personal package archive to the system.
+$ sudo apt-add-repository ppa:ansible/ansible
+
+// update the Linux so that the package repository will be added to the machine.
+$ sudo apt-get update
+
+//Installing the Ansible onf Ubuntu 16.04
+$ sudo apt-get install ansible
+
+$ ansible --version
+
+//create the hosts file so that we can start the communication with the other client or server machines.
+$ sudo nano /etc/ansible/hosts
+
+[Ansible_server]
+Client1 ansible_ssh_host=192.168.0.10
+Client2 ansible_ssh_host=192.168.0.11
+
+//Generate ssh key in the ansible machine, which we have to copy to all the remote hosts for doing deployments or configurations on them.
+$ ssh-keygen -t rsa -b 4096 -C “tushar@tushar-VirtualBox”
+
+You'll have two files:
+
+.ssh/id_rsa
+.ssh/id_rsa.pub
+
+ On Server A, cat and copy to clipboard the public key:
+$ cat ~/.ssh/id_rsa.pub
+ [select and copy to your clipboard]
+ 
+ cat >> ~/.ssh/authorized_keys
+[paste your clipboard contents]
+[ctrl+d to exit]
+
+$ ansible all -m ping -e 'ansible_python_interpreter=/usr/bin/python3'
+
+“all” means all hosts
+“-m” stands for module
+“ping” is one of the module of ansible
