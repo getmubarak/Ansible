@@ -42,3 +42,4 @@ ansible-playbook -s -u ubuntu my_playbook_2.yaml -e 'ansible_python_interpreter=
 
 ansible_ssh_user= <your_user> ansible_ssh_pass=<your_pass>.
 
+ ssh tecmint@192.168.0.112
