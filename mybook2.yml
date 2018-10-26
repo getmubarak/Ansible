@@ -1,0 +1,5 @@
+---
+- name: Ansible_server
+  hosts: Ansible_server
+  roles:
+    - angstwad.docker_ubuntu
