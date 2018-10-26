@@ -40,3 +40,5 @@ $ ansible all -m ping -e 'ansible_python_interpreter=/usr/bin/python3'
 
 ansible-playbook -s -u ubuntu my_playbook_2.yaml -e 'ansible_python_interpreter=/usr/bin/python3'
 
+ansible_ssh_user= <your_user> ansible_ssh_pass=<your_pass>.
+
